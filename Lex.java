@@ -25,16 +25,18 @@ logic order:
 
 public class Lex {
 	String stream;
+	private String[] KEYWORD = { "if", "else", "endif", "while", "endw", "endf", "return"};
+	private String[] TYPE_NAME = {"int", "float", "string", "bool"};
 
 	//helper functions
 	public static boolean isWhiteSpace(char c)
 	{
-		return c == ' ';
+		return c == ' '|| c == '\t' || c == '\n' || c == '\r';
 	}
 
 	public static boolean isDigit(char c)
 	{
-		return x >= '0' && c <= '9';
+		return c >= '0' && c <= '9';
 	}
 
 	public static boolean isLetter(char c)
@@ -44,8 +46,40 @@ public class Lex {
 
 	public static boolean isSyntaxChar(char c)
 	{
-		
+		switch (c) {
+			case '=': case '*': case '/': case '+': case '-':
+			case '(': case ')': case'[': case']':
+			case';': case',': case'.':
+				return true;
+			default:
+				return false;
+		}
 	}
+
+	public boolean isKeyword(String token)
+	{
+		for (String keyword: KEYWORD)
+		{
+			if (keyword.equal(token))
+			{
+				return true;
+			}
+		}
+		return false;
+	}
+
+	public boolean isTyping(String token)
+	{
+		for (String type: TYPE_NAME)
+		{
+			if (type.equal(token))
+			{
+				return true;
+			}
+		}
+		return false;
+	}
+
 
 	Lex(String input)
 	{
