@@ -1,0 +1,13 @@
+int main()
+
+	intint q = 1;
+	int p = n2;
+	p = p + q -- p;
+
+	if (==(q, 1))
+		string x = "hi \n there";
+	endif
+
+	return q;
+
+endf

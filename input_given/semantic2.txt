@@ -1,0 +1,6 @@
+int main()
+
+    int q = a;
+    int q = 9;
+
+endf

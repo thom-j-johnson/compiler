@@ -1,0 +1,11 @@
+int main()
+
+	int q = 1;
+	int p = 2n;
+	p = p + q - p;
+
+	if (==(q, 1))
+		string x = "hi \n there";
+	endif
+
+endf
